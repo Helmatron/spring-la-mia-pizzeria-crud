@@ -56,12 +56,42 @@
 	<!-- MAIN -->
 	<main>
 
+		<!-- TITLE -->
 		<div class="container-fluid full-height d-flex align-items-center justify-content-center my-5">
-		        <div class="row">
-		            <h1 class="text-center">Le Nostre Pizze</h1>
-		        </div>
-		    </div>
+			<div class="row">
+				<h1 class="text-center">Le Nostre Pizze</h1>
 
+				<!-- MESSAGGIO DI ALERT -->
+				<div class="text-center mt-5" th:if="${#lists.isEmpty(list)}">
+					<div class="alert alert-warning" role="alert">
+						Non ci sono pizze presenti nella nostra applicazione
+					</div>
+				</div>
+			</div>
+
+			<!-- ELENCO DELLE PIZZE -->
+			<div class="row" th:unless="${#lists.isEmpty(list)}">
+				<div class="col-md-4 mb-4" th:each="pizza : ${list}">
+					<div class="card">
+						<img th:src="${pizza.photoUrl}" class="card-img-top" alt="Immagine pizza">
+						<div class="card-body">
+							<h5 class="card-title" th:text="${pizza.name}">Nome Pizza</h5>
+							<p class="card-text" th:text="${pizza.description}">Descrizione Pizza</p>
+							<p class="card-text"><small class="text-muted"
+									th:text="'Prezzo: €' + ${pizza.price}">Prezzo</small></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<ul class="list-group mt-5">
+			<li class="list-group-item" th:each="pizza : ${list}">
+				<span th:text="${pizza.name}"></span>
+			</li>
+		</ul>
+		</div>
+		</div>
 	</main>
 
 	<!-- FOOTER -->

@@ -21,8 +21,9 @@ public class PizzaController {
 	@GetMapping
 	public String index(Model model) {
 		List<Pizza> pizze = repository.findAll();
+		System.out.println("Numero di pizze trovate: " + pizze.size());
 		model.addAttribute("list", pizze);
-		return "/index";
+		return "index";
 	}
 
 }
