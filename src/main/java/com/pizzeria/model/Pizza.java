@@ -1,18 +1,38 @@
 package com.pizzeria.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "pizza")
 public class Pizza {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	
+	@Column(nullable = false)
 	private String name;
-	private String description;
-	private String photoUrl;
-	private double price;
 	
-	public Pizza(String name, String description, String photoUrl, double price) {
-		super();
-		this.name = name;
-		this.description = description;
-		this.photoUrl = photoUrl;
-		this.price = price;
+	@Column
+	private String description;
+	
+	@Column(name="photo_url")
+	private String photoUrl;
+	
+	@Column
+	private double price;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -46,7 +66,6 @@ public class Pizza {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
-	
-	
+
+
 }
