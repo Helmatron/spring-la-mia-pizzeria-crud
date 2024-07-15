@@ -1,11 +1,15 @@
 
 @font-face {
     font-family: 'PlaywriteCU';
-    src: url('/fonts/PlaywriteCU.ttf') format('truetype');
+    src: local('PlaywriteCU'), url('fonts/PlaywriteCU.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 h1 {
     font-family: 'PlaywriteCU', sans-serif;
+}
+
+.myImg {
+	height: 200px;
 }
