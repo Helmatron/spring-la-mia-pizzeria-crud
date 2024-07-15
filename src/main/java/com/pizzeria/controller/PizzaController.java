@@ -12,7 +12,7 @@ import com.pizzeria.model.Pizza;
 import com.pizzeria.repository.PizzaRepository;
 
 @Controller
-@RequestMapping("/index")
+@RequestMapping("/")
 public class PizzaController {
 	
 	@Autowired
@@ -21,7 +21,6 @@ public class PizzaController {
 	@GetMapping
 	public String index(Model model) {
 		List<Pizza> pizze = repository.findAll();
-		System.out.println("Numero di pizze trovate: " + pizze.size());
 		model.addAttribute("list", pizze);
 		return "index";
 	}

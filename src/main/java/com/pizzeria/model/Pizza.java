@@ -14,18 +14,30 @@ public class Pizza {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	@Column(nullable = false)
 	private String name;
-	
+
 	@Column
 	private String description;
-	
-	@Column(name="photo_url")
+
+	@Column(name = "photo_url")
 	private String photoUrl;
-	
+
 	@Column
 	private double price;
+
+	// Costruttore con argomenti
+	public Pizza(String name, String description, String photoUrl, double price) {
+		this.name = name;
+		this.description = description;
+		this.photoUrl = photoUrl;
+		this.price = price;
+	}
+
+	// Costruttore senza argomenti
+	public Pizza() {
+	}
 
 	public Integer getId() {
 		return id;
@@ -67,5 +79,9 @@ public class Pizza {
 		this.price = price;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Pizza{" + "id=" + id + ", name='" + name + '\'' + ", description='" + description + '\''
+				+ ", photoUrl='" + photoUrl + '\'' + ", price=" + price + '}';
+	}
 }
