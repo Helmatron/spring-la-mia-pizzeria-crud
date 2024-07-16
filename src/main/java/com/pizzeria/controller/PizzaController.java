@@ -54,4 +54,10 @@ public class PizzaController {
 		model.addAttribute("list", pizze);
 		return "index";
 	}
+	
+	    @GetMapping("/nuova_pizza")
+	    public String creaPizza() {
+	        return "nuova_pizza";
+	    }
 }
+
