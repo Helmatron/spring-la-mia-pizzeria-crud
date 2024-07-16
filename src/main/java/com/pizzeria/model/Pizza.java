@@ -17,6 +17,9 @@ public class Pizza {
 
 	@Column(nullable = false)
 	private String name;
+	
+	@Column
+	private String ingredients;
 
 	@Column
 	private String description;
@@ -28,8 +31,9 @@ public class Pizza {
 	private double price;
 
 	// Costruttore con argomenti
-	public Pizza(String name, String description, String photoUrl, double price) {
+	public Pizza(String name, String ingredients, String description, String photoUrl, double price) {
 		this.name = name;
+		this.ingredients = ingredients;
 		this.description = description;
 		this.photoUrl = photoUrl;
 		this.price = price;
@@ -79,9 +83,19 @@ public class Pizza {
 		this.price = price;
 	}
 
+	public String getIngredients() {
+		return ingredients;
+	}
+
+	public void setIngredients(String ingredients) {
+		this.ingredients = ingredients;
+	}
+
 	@Override
 	public String toString() {
-		return "Pizza{" + "id=" + id + ", name='" + name + '\'' + ", description='" + description + '\''
-				+ ", photoUrl='" + photoUrl + '\'' + ", price=" + price + '}';
+		return "Pizza [id=" + id + ", name=" + name + ", ingredients=" + ingredients + ", description=" + description
+				+ ", photoUrl=" + photoUrl + ", price=" + price + "]";
 	}
+
+	
 }
