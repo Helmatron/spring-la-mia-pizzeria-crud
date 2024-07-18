@@ -1,14 +1,14 @@
-
-@font-face {
-    font-family: 'PlaywriteCU';
-    src: local('PlaywriteCU'), url('fonts/PlaywriteCU.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
+/*
+FONT INTEGRATION
+*/
 h1 {
-    font-family: 'PlaywriteCU', sans-serif;
+	font-family: "Playwrite CU", cursive;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	/* Modifica questo valore per cambiare il peso */
+	font-style: normal;
 }
+
 
 .myImg {
 	height: 200px;
