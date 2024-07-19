@@ -56,8 +56,12 @@
 								<p class="card-text"><small class="text-muted"
 										th:text="'Prezzo: €' + ${pizza.price}">Prezzo</small></p>
 								<div class="d-flex justify-content-between">
+									
+									<!-- BUTTONS -->
 									<a th:href="@{/edit_pizze/{id}(id=${pizza.id})}" class="btn btn-primary">Modifica</a>
-									<a href="/" class="btn btn-danger">Elimina</a>
+									<form th:action="@{'/gestionale/{id}'(id=${pizza.id})}" method="post">
+									<button type="submit" id="submitButton" class="btn btn-danger">Elimina</button>
+									</form>
 								</div>
 							</div>
 						</div>

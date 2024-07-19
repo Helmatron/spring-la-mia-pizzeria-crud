@@ -92,7 +92,7 @@ public class PizzaController {
 	}
 
 	/*
-	 * UPDATE E RIMOZIONE PIZZE DA GESTIONALE.HTML
+	 * UPDATE PIZZE DA GESTIONALE.HTML
 	 */
 	@GetMapping("/gestionale")
 	public String gestionale(Model model) {
@@ -117,4 +117,15 @@ public class PizzaController {
 		repository.save(pizza);
 		return "redirect:/gestionale";
 	}
+	
+	/*
+	 * DELETE PIZZE DA GESTIONALE.HTML
+	 */
+	
+	@PostMapping("/gestionale/{id}")
+	public String deletePizza(@PathVariable("id") Integer id) {
+		repository.deleteById(id);
+		return "redirect:/gestionale";
+	}
+	
 }
