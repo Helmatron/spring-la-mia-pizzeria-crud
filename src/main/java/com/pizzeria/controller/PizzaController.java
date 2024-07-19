@@ -2,6 +2,7 @@ package com.pizzeria.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.pizzeria.model.Pizza;
 import com.pizzeria.repository.PizzaRepository;
 
+import ch.qos.logback.core.joran.conditional.IfAction;
 import jakarta.validation.Valid;
 
 @Controller
@@ -87,5 +89,32 @@ public class PizzaController {
 		repository.save(formPizza);
 		return "redirect:/";
 
+	}
+
+	/*
+	 * UPDATE E RIMOZIONE PIZZE DA GESTIONALE.HTML
+	 */
+	@GetMapping("/gestionale")
+	public String gestionale(Model model) {
+		List<Pizza> pizze = repository.findAll();
+		model.addAttribute("list", pizze);
+		return "gestionale";
+	}
+
+	@GetMapping("/edit_pizze/{id}")
+	public String editPizza(@PathVariable("id") Integer id, Model model) {
+		model.addAttribute("pizza", repository.findById(id).get());
+		return "edit_pizze";
+	}
+
+	@PostMapping("/edit_pizze/{id}")
+	public String updatePizza(@Valid @ModelAttribute("pizza") Pizza pizza, BindingResult bindingResult,
+			Model model) {
+
+		if (bindingResult.hasErrors()) {
+			return "/edit_pizze";
+		}
+		repository.save(pizza);
+		return "redirect:/gestionale";
 	}
 }

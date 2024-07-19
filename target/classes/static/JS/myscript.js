@@ -9,3 +9,8 @@ function resetFormGoHome() {
 	document.getElementById("pizza-form").reset();
 	window.location.href = '/';
 };
+
+function resetFormGoGestionale() {
+	document.getElementById("pizza-form").reset();
+	window.location.href = '/gestionale';
+};

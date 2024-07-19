@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>&hearts; Nuova Pizza &hearts;</title>
+	<title>&hearts; Modifica &hearts;</title>
 
 	<!-- FAVICON -->
 	<link rel="icon" th:href="@{/icon/fav_icon_pizza.png}" type="image/png">
@@ -33,7 +33,8 @@
 			<!-- TITLE -->
 			<div class="container-fluid">
 				<div class="row my-5">
-					<h1 class="text-center">Crea una nuova pizza!</h1>
+					<h1 class="text-center">Modifica la Pizza</h1>
+					<h2 class="text-center fontStyle" style="margin-top: 20px;" th:text="${pizza.name}">Name</h2>
 				</div>
 
 				<!-- CONTEINER FORM -->
@@ -41,7 +42,7 @@
 					<div class="row col-12 col-sm-6 col-md-4 col-lg-5">
 
 						<!-- FORM -->
-						<form id="pizza-form" th:object="${pizza}" th:action="@{/nuova_pizza}" method="post">
+						<form id="pizza-form" th:object="${pizza}" th:action="@{/edit_pizze/{id}(id=${pizza.id})}" method="post">
 
 							<!-- NAME -->
 							<div class="mb-3">
@@ -116,9 +117,8 @@
 							<!-- BUTTONS -->
 							<div class="d-flex justify-content-between mb-3">
 								<button type="button" class="btn btn-primary"
-									onclick="resetFormGoHome()">Indietro</button>
-								<button type="submit" class="btn btn-primary">Crea</button>
-								<button type="button" class="btn btn-danger" onclick="resetForm()">Annulla</button>
+									onclick="resetFormGoGestionale()">Indietro</button>
+								<button type="submit" class="btn btn-success">Conferma le Modifiche</button>
 							</div>
 
 						</form>

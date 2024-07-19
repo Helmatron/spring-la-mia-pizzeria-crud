@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>&hearts; Pizzeria BY Ema &hearts;</title>
+	<title>&hearts; Gestionale &hearts;</title>
 
 	<!-- FAVICON -->
 	<link rel="icon" th:href="@{/icon/fav_icon_pizza.png}" type="image/png">
@@ -33,7 +33,7 @@
 			<!-- TITLE -->
 			<div class="container-fluid">
 				<div class="row my-5">
-					<h1 class="text-center">Le Nostre Pizze</h1>
+					<h1 class="text-center">Gestione delle Pizze</h1>
 				</div>
 				<!-- MESSAGGIO DI ALERT -->
 				<div class="container-fluid">
@@ -52,10 +52,13 @@
 							<div class="card-body">
 								<h5 class="card-title" th:text="${pizza.name}">Nome Pizza</h5>
 								<p class="card-text" th:text="${pizza.ingredients}">Ingredienti della Pizza</p>
+								<p class="card-text" style="font-weight: 350;" th:text="${pizza.description}">descrizione</p>
 								<p class="card-text"><small class="text-muted"
 										th:text="'Prezzo: €' + ${pizza.price}">Prezzo</small></p>
-								<a th:href="@{/dettagli_pizze/{id}(id=${pizza.id})}"
-									class="btn btn-primary">Dettagli</a>
+								<div class="d-flex justify-content-between">
+									<a th:href="@{/edit_pizze/{id}(id=${pizza.id})}" class="btn btn-primary">Modifica</a>
+									<a href="/" class="btn btn-danger">Elimina</a>
+								</div>
 							</div>
 						</div>
 					</div>

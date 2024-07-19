@@ -2,7 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="it">
 
 <!-- HEAD -->
-<head th:fragment="head">
+
+<head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title th:text="${pizza.name}">&hearts; Name &hearts;</title>
@@ -20,42 +21,48 @@
 
 <body>
 
-	<!-- HEADER -->
-	<header th:insert="~{fragments/navbar :: navbar}"></header>
+	<!-- CLASSE PER IMPORRE AL FOTTER DI STARE IN FONDO ALLA PAGINA -->
+	<div class="wrapper	title-top-margin">
 
-	<!-- MAIN -->
-	<main>
+		<!-- HEADER -->
+		<header th:insert="~{fragments/navbar :: navbar}"></header>
 
-		<!-- TITLE -->
-		<div class="container-fluid">
-			<div class="row my-5">
-				<h1 class="text-center" th:text="${pizza.name}"></h1>
-			</div>
+		<!-- MAIN -->
+		<main>
 
-			<!-- DETTAGLI PIZZE -->
+			<!-- TITLE -->
 			<div class="container-fluid">
-				<div class="row justify-content-center" th:if="${findPizzaById}">
-					<div class="col-md-4 mb-4 d-flex justify-content-center">
-						<div class="card align-items-center" style="width: 18rem;">
-							<img th:src="${pizza.photoUrl}" class="card-img-top" alt="Immagine pizza">
-							<div class="card-body">
-								<h5 class="card-title text-center">Descrizione</h5>
-								<p class="card-text text-center" th:text="${pizza.description}">Descrizione Pizza</p>
-								<div class="d-flex justify-content-center">
-									<a th:href="@{/}" class="btn btn-primary">Indietro</a>
+				<div class="row my-5">
+					<h1 class="text-center" th:text="${pizza.name}"></h1>
+				</div>
+
+				<!-- DETTAGLI PIZZE -->
+				<div class="container-fluid">
+					<div class="row justify-content-center" th:if="${findPizzaById}">
+						<div class="col-md-4 mb-4 d-flex justify-content-center">
+							<div class="card align-items-center" style="width: 18rem;">
+								<img th:src="${pizza.photoUrl}" class="card-img-top" alt="Immagine pizza">
+								<div class="card-body">
+									<h5 class="card-title text-center">Descrizione</h5>
+									<p class="card-text text-center" th:text="${pizza.description}">Descrizione Pizza
+									</p>
+									<div class="d-flex justify-content-center">
+										<a th:href="@{/}" class="btn btn-primary">Indietro</a>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</main>
+		</main>
 
-	<!-- FOOTER -->
-	<footer>
+		<!-- FOOTER -->
+		<footer th:insert="~{fragments/footer :: footer}"></footer>
+	</div>
 
-	</footer>
+	<!-- PERSONAL JS -->
+	<script th:src="@{/JS/myscript.js}"></script>
 
 	<!-- JS BOOTSTRAP -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
