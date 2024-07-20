@@ -1,11 +1,22 @@
-
-![Copertina del progetto](Git_img/mypizzeria.jpg)
-
 # spring-la-mia-pizzeria-crud
- 
 Dobbiamo realizzare un’applicazione web che ci aiuti a gestire la nostra pizzeria.
 
-PARTE 1
+## Index
+![Copertina del progetto](./readme_img/copertina.png)
+
+## db_pizzeria - MySQL
+![Copertina del progetto](./readme_img/db_pizzeria.png)
+
+## Gestione
+![Copertina del progetto](./readme_img/gestione.png)
+
+## Form Nuova Pizza
+![Copertina del progetto](./readme_img/crea_pizza.png)
+
+## Form Modifica Pizza Esistente
+![Copertina del progetto](./readme_img/modifica.png)
+
+## PARTE 1
 Abbiamo bisogno di creare la prima pagina (index) dove mostriamo tutte le pizze che prepariamo.
 Nei prossimi giorni implementeremo il resto dei metodi per le CRUD.
 Una pizza avrà le seguenti informazioni :
@@ -18,7 +29,7 @@ Implementiamo  quindi il controller con il metodo index che restituisce una view
 L’elenco potrebbe essere vuoto : in quel caso dobbiamo mostrare un messaggio che indichi all’utente che non ci sono pizze presenti nella nostra applicazione.
 Gestiamo i componenti riutilizzabili con i fragments.
 
-PARTE 2
+## PARTE 2
 Ogni pizza dell’elenco avrà quindi un pulsante che se cliccato ci porterà a una pagina che mostrerà i dettagli della pizza scelta.
 Dobbiamo quindi inviare l’id come parametro dell’URL, recuperarlo nel metodo del controller, caricare i dati della pizza ricercata e passarli come model.
 La view a quel punto li mostrerà all’utente con la grafica che preferiamo.
@@ -26,7 +37,7 @@ Nella pagina con l’elenco delle pizze aggiungiamo un campo di testo che se com
 
 _______________________________________________________________________________________________
 
-nuove implementazioni per la nostra applicazione.
+## nuove implementazioni per la nostra applicazione.
 Abbiamo la lista delle pizze, abbiamo i dettagli delle pizze...perchè non realizzare la pagina per la creazione di una nuova pizza?
 Aggiungiamo quindi tutto il codice necessario per mostrare il form per la creazione di una nuova pizza e per il salvataggio dei dati in tabella.
 Nella index creiamo ovviamente il bottone “Crea nuova pizza” che ci porta a questa nuova pagina creata.
@@ -40,7 +51,7 @@ Se è stata spiegata la validazione custom, aggiungere alla consegna il seguente
 
 ____________________________________________________________________________________________________
 
-andiamo avanti col nostro progetto.
+## andiamo avanti col nostro progetto.
 Completiamo le pagine di gestione delle nostre pizze!
 Abbiamo la pagina con la lista di tutte le pizze, quella con i dettagli della singola pizza, quella per crearla...cosa manca?
 Dobbiamo realizzare :
