@@ -1,3 +1,6 @@
+
+![Copertina del progetto](Git_img/mypizzeria.jpg)
+
 # spring-la-mia-pizzeria-crud
  
 Dobbiamo realizzare un’applicazione web che ci aiuti a gestire la nostra pizzeria.
